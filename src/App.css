@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+
+.uform{
+  display: flex;
+  flex-direction: column;
+  
+}
+
+#sbtn{ margin-top: 20px;
+      width:80px;
+
+
+}
