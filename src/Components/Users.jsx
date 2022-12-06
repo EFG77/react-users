@@ -9,13 +9,12 @@ const Users = (props) => {
   return (
     <div>
        {" "}
-       {pupils.map((item,index)=>{
+       {pupils.map((item,id)=>{
         return(
-
-            <div key={index}>
+            <div key={id}>
             <Container>
               <Row>
-          <User user={item}/>{" "}
+          <User user={item} deleteUser={props.deleteUser} editUser={props.editUser} />{" "}
               </Row>
               </Container>
               </div>

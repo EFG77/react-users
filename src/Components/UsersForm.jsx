@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Card,Form,Button} from "react-bootstrap";
+import {v4 as uuid} from "uuid";
 
 const UsersForm = (props) => {
 
@@ -8,6 +9,7 @@ const UsersForm = (props) => {
     const[gen, setGen]=useState(0);
 
     const handleSubmit = (e) => {
+      console.log('Handing Submit', e)
         e.preventDefault();
 
 
@@ -15,6 +17,7 @@ const UsersForm = (props) => {
           name:name,
           email:email,
           gen:gen,
+          id:uuid(),
         };
 
 props.addUser(newUser);
@@ -23,15 +26,8 @@ setName("")
 setEmail("")
 setGen(0)
 
-    };
-
-
-
-
-
-
+                       };
     
-
     return (
         <div>
   <Card>
@@ -48,7 +44,7 @@ setGen(0)
         <Form.Label>Gen</Form.Label>
         <Form.Control type="number" placeholder="Enter Gen" value={gen} onChange={(e)=>{setGen(e.target.value)}} name="gen"/>
       </Form.Group>
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" >
         Submit
       </Button>
       </Form>
